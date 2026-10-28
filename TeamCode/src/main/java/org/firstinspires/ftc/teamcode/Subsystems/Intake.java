@@ -1,5 +1,6 @@
 package org.firstinspires.ftc.teamcode.Subsystems;
 
+import com.pedropathing.ivy.Command;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorEx;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
@@ -7,46 +8,22 @@ import com.qualcomm.robotcore.hardware.Gamepad;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 
 public class Intake {
-    DcMotorEx top, bottom;
+    public DcMotorEx intake;
     Gamepad gamepad;
     public void init(HardwareMap hardWareMap) {
-        top = hardWareMap.get(DcMotorEx.class, "top");
-        bottom = hardWareMap.get(DcMotorEx.class, "bottom");
+        intake = hardWareMap.get(DcMotorEx.class, "intake");
 
-        top.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
-        bottom.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
-
-        top.setDirection(DcMotorSimple.Direction.FORWARD); //change these if backwards
-        bottom.setDirection(DcMotorSimple.Direction.FORWARD);
-
+        intake.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
+        intake.setDirection(DcMotorSimple.Direction.REVERSE);
         gamepad = new Gamepad();
     }
 
-    public void topIntake() {
-        top.setPower(1);
+    public Command intake() {
+        intake.setPower(1);
+        return null;
     }
-
-    public void topReverse() {
-        top.setPower(-1);
-    }
-
-    public void topStop() {
-        top.setPower(0);
-    }
-
-    public void bottomIntake() {
-        top.setPower(1);
-    }
-
-    public void bottomReverse() {
-        top.setPower(-1);
-    }
-
-    public void bottomStop() {
-        top.setPower(0);
-    }
-
-    public void intake() {
-        if (gamepad.)
+    public Command reverse() {
+        intake.setPower(-1);
+        return null;
     }
 }
