@@ -1,3 +1,4 @@
+/*
 package org.firstinspires.ftc.teamcode.TeleOp;
 
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
@@ -35,4 +36,4 @@ public class ServoTest extends OpMode {
         telemetry.addData("servo pos", servo.getPosition());
         telemetry.update();
     }
-}
+}*/

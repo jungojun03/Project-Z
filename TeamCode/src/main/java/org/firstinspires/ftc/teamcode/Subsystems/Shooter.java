@@ -11,7 +11,7 @@ public class Shooter {
     private double encoderCPM = 28;
 
     private
-    private double kV, kS, kP;
+    double kV, kS, kP;
 
     private void init(HardwareMap hardwareMap) {
         shooter = hardwareMap.get(DcMotorEx.class, "shooter");
@@ -32,6 +32,10 @@ public class Shooter {
     }
 
     public void reverse() {
+
+    }
+
+    public void stop() {
 
     }
 }
